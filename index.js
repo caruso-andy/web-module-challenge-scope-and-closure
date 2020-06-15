@@ -67,7 +67,7 @@ function inning(pointsScored){
   pointsScored = Math.floor(Math.random()*3);
   return pointsScored;
 }
-console.log(inning());
+inning();
 /* Task 3: finalScore()
 
 Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
@@ -90,7 +90,7 @@ function finalScore(inning, inningNumber){
   }
   return final;
 }
-console.log(finalScore(inning, 5));
+finalScore(inning, 9);
 
 /* Task 4: 
 
