@@ -99,7 +99,7 @@ Create a function called `scoreboard` that accepts the following parameters:
 (1) Callback function `inning` that you wrote above
 (2) A number of innings
 
-and returns the score at each pont in the game, like so:
+and returns the score at each point in the game, like so:
 
 1st inning: 0 - 2
 2nd inning: 1 - 3
@@ -113,11 +113,27 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(inning, inningNumber) {
+function scoreboard(inning, inningNumber){
+  let final = {Home: 0, Away: 0};
+  eachInning = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th'];
   for(i=0;i<inningNumber;++i){
-    let list = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th'];
-    fullList = list[i];
+    final.Home += inning();
+    final.Away += inning();
+    console.log(`${eachInning[i]} inning: ${final.Home} - ${final.Away}`);
+    if(i === inningNumber - 1){
+      console.log(`Final Score: ${final.Home} - ${final.Away}`);
+    }
+  }
+  return final;
 }
-return fullList;
-}
-console.log(scoreboard(inning, 9));
+scoreboard(inning, 9);
+
+// function scoreboard(inning, inningNumber) {
+//   eachInning = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th'];
+//   for(i=0;i<inningNumber;++i){
+//       console.log(`${eachInning[i]} inning: ${} - ${}`);
+//   }
+//   return final;
+// }
+// console.log(scoreboard(inning, 9));
+
